@@ -1,0 +1,347 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Syne', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+  background-color: #ff0000;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+a {
+  color: #000000;
+}
+
+a:hover, a:focus {
+  /* No underlining when hovering over a link */
+  text-decoration: none;
+}
+
+a:visited {
+  /* visited link */
+  color: #000000;
+}
+
+a:active {
+  /* selected link */
+  color: #ffee00;
+}
+
+/* button text was removed from here... */
+.button, button {
+  border: none;
+  display: inline-block;
+  /* takes the font from the outer container */
+  font-family: inherit;
+  /* style button */
+  background-color: #fe0;
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 3px;
+  /* width of the border, type, color */
+  border: none;
+  -webkit-transition: 0.5s opacity;
+  transition: 0.5s opacity;
+}
+
+button:hover,
+button:focus,
+.button:hover,
+.button:focus {
+  /* lets the mouse appear as a hand when hovering over the button */
+  cursor: pointer;
+  /* reduces the opacity of the button to 80% */
+  opacity: 0.8;
+}
+
+/* ...to here */
+/* Header  Start */
+.page-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  border-bottom: solid 1px #000000;
+  height: auto;
+}
+
+.page-header__logo {
+  float: left;
+  height: 10vh;
+  width: auto;
+  margin: 0 auto;
+}
+
+.page-header__item:last-child {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: right;
+}
+
+.navigation-list {
+  list-style-type: none;
+}
+
+.navigation-list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.navigation-list__item--active {
+  text-decoration: none;
+}
+
+/* End of header */
+.profile__portrait {
+  float: left;
+  width: 30%;
+  max-width: 400px;
+  margin-right: 40px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.page-footer {
+  clear: both;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+}
+
+.profile {
+  min-width: 360px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
+  padding: 0 20px 20px 20px;
+}
+
+.icon {
+  width: 30px;
+  height: auto;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+.grid__item {
+  background-color: transparent;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 300px 300px 300px;
+      grid-template-columns: 300px 300px 300px;
+  -ms-grid-rows: 300px 300px;
+      grid-template-rows: 300px 300px;
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.grid__item:last-child {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 3;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+/* start grid fallback */
+.grid__item {
+  display: inline-block;
+  width: 33%;
+  padding: 10px;
+}
+
+/* end grid fallback */
+@supports (display: grid) {
+  .grid {
+    display: -ms-grid;
+    display: grid;
+    /* grid-template-columns: 300px 300px 300px; fractions are better than pixels - they are responsive */
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    margin: 0;
+  }
+  .grid__item {
+    background-color: transparent;
+    width: auto;
+    min-height: auto;
+    margin: 0;
+    outline: yellow;
+  }
+  /* The .gird__item: last-child code below determines the size of the gird boxes */
+  .grid__item:last-child {
+    -ms-grid-column: 1;
+    grid-column: 1 / 1;
+    -ms-grid-row: 1;
+    grid-row: 1 / 1;
+  }
+}
+
+/* Below: code from exercise 1.7 */
+@media all and (max-width: 500px) {
+  .grid {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+@media all and (max-width: 750px) and (min-width: 500px) {
+  .grid {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* The two '@media' lines above share the code below... */
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid__item:last-child {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+.about {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.about-item {
+  list-style-type: none;
+  display: inline-flexbox;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+}
+
+/* Sun, Cloud, Animation */
+@-webkit-keyframes color-change {
+  0% {
+    fill: #ffbf00;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #ff0000;
+  }
+}
+@keyframes color-change {
+  0% {
+    fill: #ffbf00;
+  }
+  50% {
+    fill: #fcffad;
+  }
+  100% {
+    fill: #ff0000;
+  }
+}
+
+.sun {
+  -webkit-animation: 4s color-change infinite alternate linear;
+          animation: 4s color-change infinite alternate linear;
+}
+
+@-webkit-keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+
+@keyframes cloud-move {
+  from {
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px);
+  }
+  to {
+    -webkit-transform: translate(200px, 50px);
+            transform: translate(200px, 50px);
+  }
+}
+
+.cloud-front {
+  -webkit-animation: 30s cloud-move infinite alternate linear;
+          animation: 30s cloud-move infinite alternate linear;
+}
+
+@-webkit-keyframes cloud-move-reverse {
+  from {
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px);
+  }
+  to {
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
+  }
+}
+
+@keyframes cloud-move-reverse {
+  from {
+    -webkit-transform: translate(446px, 48px);
+            transform: translate(446px, 48px);
+  }
+  to {
+    -webkit-transform: translate(100px, 48px);
+            transform: translate(100px, 48px);
+  }
+}
+
+.cloud-back {
+  -webkit-animation: 34s cloud-move-reverse infinite alternate linear;
+          animation: 34s cloud-move-reverse infinite alternate linear;
+}
+/*# sourceMappingURL=styles.css.map */
