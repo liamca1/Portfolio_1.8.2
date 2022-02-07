@@ -198,9 +198,9 @@ button:focus,
 .grid__item {
   background-color: transparent;
   width: auto;
-  min-height: auto;
+  min-height: 200px;
   margin: 0;
-  outline: yellow;
+  border: solid 1px #000000;
 
 }
 
