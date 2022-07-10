@@ -11,52 +11,29 @@
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
 
-<body>
-  <header class="page-header">
-    <!-- Add Logo here -->
-    <img src="img/logo.png" height="75px" width="auto" alt="Logo" class="page-header__item">
-    <nav class="main-navigation page-header__item">
-      <ul role="menubar" class="navigation-list">
-         <li role="presentation">
-            <a href="index.html" role="menuitem" class="navigation-list__item">Home</a>
-         </li>
-         <li role="presentation">
-            <a href="about.html" role="menuitem" class="navigation-list__item">About</a>
-         </li>
-         <li role="presentation">
-            <a href="work.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Work</a>
-         </li>
-         <li role="presentation">
-            <a href="contact.html" role="menuitem" class="navigation-list__item">Contact</a>
-         </li>
-      </ul>
-   </nav>
-  </header>
-  
-  <main>
-    <div class="profile">
-      <img src="img/Square Portrait.png"class="profile__portrait" alt="photo of me">
-      <h1>Welcome to my portfolio</h1>
-    
-    <h3>My name is Liam. I am a <span>designer</span> from New Zealand.<br>
-      <a href="#">take a peek at some of my code</a>
-    </h3>
-      
+<body class="layout">
+  <div class="sidebar">
+    <div class="liam">
+      <div class="nav-items">
+        <a class="liam">Liam Carroll</a>
+      </div>
     </div>
-  </main>
+  </div>
 
-
-  <footer class="page-footer">
-    <p>Find me on</p>
-   <div class="social-media">
-      <img src="img/github_icon.svg" class="icon" alt="github_icon">
-      <img src="img/linkedin_icon.svg" class="icon" alt="linkedin_icon">
-      <img src="img/twitter_icon.svg" class="icon" alt="twitter_icon">
+  <div class="main">
+    <div class="container">
+      <div class="container-items">
+        <a>bio</a>
+      </div>
+      <div class="container-items">
+        Liam Carroll (Berlin) is a freelance designer and web developer from Aotearoa (New Zealand). He holds a BDes (Honours) in spatial design and a GDip Arts in philosophy. In July 2022 he completed the 6 month Full Stack Web Developer program at Career Foundry and is actively taking on projects / work that build upon the skills he learnt there. Ongoing interests include philosophy studies, sound design / production, music curation, and spending time in nature.
+      </div>
+      <div class="container-items"><a href="projects.html">projects</a></div>
+      <div class="container-items"><a href="contact.html">contact</a></div>
+      <div class="container-items"><a href="blog.html">blog</a></div>
+      <div class="container-items"><a href="index.html">home</a></div>
     </div>
-  </footer>
-
-  <script src="js/tota11y.min.js"></script>
-
+  </div>
 </body>
 
 </html>
